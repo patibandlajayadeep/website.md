@@ -157,5 +157,5 @@ If you’d like to discuss opportunities in:
 - Workflow Analysis  
 - Application Support Engineering  
 
-📧 **jayadeeppati668@gmail.com**  
-📞 **815-414-2228**
+📧 **patibandlavj@gmail.com**  
+📞 **502-295-2839**
