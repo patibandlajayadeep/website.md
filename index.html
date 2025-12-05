@@ -2,635 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Venkata Jayadeep Patibandla - Portfolio</title>
+  <title>Venkata Jayadeep Patibandla – Healthcare Application Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --bg-card: #ffffff;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --accent: #2563eb;
-      --accent-soft: rgba(37, 99, 235, 0.08);
-      --border-soft: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Top bar */
-    .top-bar {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-soft);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .top-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid #d1d5db;
-      background: #e5e7eb;
-      flex-shrink: 0;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 999px;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-text span:first-child {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .brand-text span:last-child {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-    }
-
-    .nav-links a:hover {
-      border-color: var(--border-soft);
-      background: #f3f4f6;
-      text-decoration: none;
-      color: #111827;
-    }
-
-    /* Animated accent bar */
-    .motion-banner {
-      position: relative;
-      margin: 0;
-      height: 5px;
-      overflow: hidden;
-      background: #e5e7eb;
-    }
-
-    .motion-banner::before {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 35%;
-      background: linear-gradient(90deg, #2563eb, #38bdf8, #2563eb);
-      border-radius: 999px;
-      animation: slideStripe 4s linear infinite;
-    }
-
-    @keyframes slideStripe {
-      0% { transform: translateX(-120%); }
-      100% { transform: translateX(320%); }
-    }
-
-    /* Layout */
-    .content {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 20px 16px 40px;
-      flex: 1;
-    }
-
-    section {
-      margin-bottom: 28px;
-    }
-
-    .section-header {
-      margin-bottom: 10px;
-      border-bottom: 1px solid var(--border-soft);
-      padding-bottom: 6px;
-    }
-
-    .section-header h2 {
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    .section-header p {
-      margin: 3px 0 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Hero / About */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
-      gap: 20px;
-      align-items: start;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-title {
-      font-size: 1.6rem;
-      margin: 0 0 6px;
-      font-weight: 600;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0 0 10px;
-    }
-
-    .hero-tags {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .hero-tags span {
-      display: inline-block;
-      margin-right: 6px;
-    }
-
-    .hero-card {
-      background: var(--bg-card);
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      padding: 12px 14px;
-      font-size: 0.88rem;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
-    }
-
-    .hero-card p {
-      margin: 4px 0;
-    }
-
-    /* Simple chips */
-    .chip {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      font-size: 0.78rem;
-      margin: 2px 4px 0 0;
-      color: #374151;
-    }
-
-    /* Cards / grids */
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 16px;
-    }
-
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: 14px;
-      border: 1px solid var(--border-soft);
-      padding: 12px 14px;
-      font-size: 0.9rem;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.03);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
-      border-color: #d1d5db;
-    }
-
-    .card h3 {
-      font-size: 0.98rem;
-      margin: 0 0 6px;
-    }
-
-    .card p {
-      margin: 4px 0;
-    }
-
-    /* Lists */
-    .list {
-      padding-left: 18px;
-      margin: 6px 0 0;
-      font-size: 0.9rem;
-    }
-
-    .list li {
-      margin-bottom: 3px;
-    }
-
-    .meta-line {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .job-title {
-      font-weight: 500;
-    }
-
-    /* Project cards with motion */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 600px) {
-      .projects-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      padding: 10px 12px;
-      font-size: 0.86rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
-      color: #111827;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.09), transparent 55%);
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      pointer-events: none;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
-      border-color: #d1d5db;
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-title {
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .project-tag {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .project-link {
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-soft);
-      background: #ffffff;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 10px 16px 14px;
-      text-align: center;
-    }
-  </style>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page">
-    <!-- Top bar -->
-    <header class="top-bar">
-      <div class="top-inner">
-        <div class="brand">
-          <div class="avatar">
-            <!-- Make sure jay-photo.jpg is uploaded in the repo -->
-            <img src="img.jpg" alt="Venkata Jayadeep Patibandla">
-          </div>
-          <div class="brand-text">
-            <span>Venkata Jayadeep Patibandla</span>
-            <span>Application Developer – Healthcare · EHR · Orders</span>
-          </div>
-        </div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="motion-banner"></div>
-    </header>
 
-    <!-- Main content -->
-    <main class="content">
-      <!-- Hero / About -->
-      <section id="about" class="reveal">
-        <div class="hero">
-          <div>
-            <p class="hero-tags">
-              <span>Healthcare IT</span>·
-              <span>Application Development</span>·
-              <span>Orders & Claims Workflows</span>
-            </p>
-            <h1 class="hero-title">
-              Application Developer focused on healthcare workflows and order-driven systems.
-            </h1>
-            <p class="hero-subtitle">
-              I have <strong>5+ years of experience</strong> working with healthcare and insurance systems at
-              Tech Cities, Capgemini (AXA), and Context 4 Healthcare. I support and build applications used
-              by non-technical users such as billing teams, SMEs, and clinicians.
-            </p>
-            <p class="hero-subtitle">
-              My work includes workflow analysis, application configuration, SQL-driven validation, and
-              writing clear test cases for upgrades and new functionality.
-            </p>
-          </div>
-
-          <aside class="hero-card">
-            <p><strong>Target Role:</strong> Application Developer – Orders (25006175)</p>
-            <p class="meta-line">
-              Aligned with UI Health Care’s focus on workflow analysis, application build, testing, and support for orders management.
-            </p>
-            <p>
-              <strong>Current:</strong> Senior Software Engineer – Context 4 Healthcare<br>
-              <strong>Location:</strong> USA · Open to remote/hybrid in Iowa (per role requirements)
-            </p>
-            <p>
-              <strong>Contact:</strong><br>
-              Email: <a href="mailto:patibandlavj@gmail.com">patibandlavj@gmail.com</a><br>
-              Phone: +1 (502) 295-2839
-            </p>
-            <p>
-              <span class="chip">Healthcare workflows</span>
-              <span class="chip">Orders & claims</span>
-              <span class="chip">Testing & QA</span>
-            </p>
-          </aside>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="reveal">
-        <div class="section-header">
-          <h2>Skills Overview</h2>
-          <p>Technical and domain skills relevant to healthcare application development and support.</p>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Healthcare & Workflow</h3>
-            <p class="meta-line">Experience with real-world clinical and claims processes.</p>
-            <ul class="list">
-              <li>Orders and procedure workflows (labs, imaging, related services).</li>
-              <li>Claims validation, clinical edits, rules-based engines.</li>
-              <li>Understanding of EHR-linked workflows for inpatient/ambulatory settings.</li>
-              <li>Working with SMEs, nurses, billing staff, and operations users.</li>
-              <li>Translating workflows into functional and technical specifications.</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Technical & Testing</h3>
-            <p class="meta-line">Tools used to implement and support applications.</p>
-            <ul class="list">
-              <li>C#, .NET, Web API, RESTful services.</li>
-              <li>SQL Server, T-SQL, complex joins and stored procedures.</li>
-              <li>Python, basic Scala, Git, CI/CD concepts.</li>
-              <li>Azure (Microsoft Certified: AZ-204), basic AWS exposure.</li>
-              <li>Writing and executing unit, integration, regression, and UAT test cases.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section id="experience" class="reveal">
-        <div class="section-header">
-          <h2>Experience</h2>
-          <p>Roles that align with analysis, configuration, testing, and support of healthcare applications.</p>
-        </div>
-
-        <div class="card">
-          <h3>Context 4 Healthcare</h3>
-          <p class="job-title">Senior Software Engineer</p>
-          <p class="meta-line">Naperville, IL · 2022 – Present</p>
-          <ul class="list">
-            <li>Support and enhance rule-based applications that validate claims, procedures, and ordered services.</li>
-            <li>Analyze clinical and billing workflows and convert them into rule configurations and technical requirements.</li>
-            <li>Design and execute detailed test scripts for new rules, clinical edits, upgrades, and defect fixes.</li>
-            <li>Work closely with non-technical users (billing staff, SMEs) to clarify requirements and system behavior.</li>
-            <li>Troubleshoot production issues across SQL, application logic, and configuration, ensuring accurate outcomes.</li>
-            <li>Document system design, changes, and testing results in a clear and reusable format.</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:12px;">
-          <h3>Capgemini – AXA Health Insurance</h3>
-          <p class="job-title">Application Developer</p>
-          <p class="meta-line">India · 2020 – 2022</p>
-          <ul class="list">
-            <li>Supported EHR-linked claims and procedure workflows for a large health insurance client.</li>
-            <li>Collaborated with nurses, billing teams, and operations staff to resolve workflow and data issues.</li>
-            <li>Wrote SQL queries and test cases to validate diagnosis/procedure relationships and claims logic.</li>
-            <li>Participated in application upgrades, performing regression and integration testing.</li>
-            <li>Worked with application owners and vendors to clarify integration requirements and system capabilities.</li>
-            <li>Converted business workflows into functional specifications for development and QA teams.</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:12px;">
-          <h3>Tech Cities</h3>
-          <p class="job-title">Software Developer</p>
-          <p class="meta-line">India · 2019 – 2020</p>
-          <ul class="list">
-            <li>Developed and supported .NET and SQL applications used by business and healthcare users.</li>
-            <li>Implemented backend logic and APIs to streamline manual processes and reduce errors.</li>
-            <li>Optimized SQL queries and application flows to improve performance.</li>
-            <li>Created test cases and performed end-to-end validation before releases.</li>
-            <li>Documented features, known issues, and deployment steps for team use.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Projects with motion & links -->
-      <section id="projects" class="reveal">
-        <div class="section-header">
-          <h2>Projects – Click to view details</h2>
-          <p>Each card links to a separate page with more detail about that project.</p>
-        </div>
-
-        <div class="projects-grid">
-          <a class="project-card" href="project-orders.html">
-            <div class="project-title">Clinical Orders & Claims Optimization</div>
-            <div class="project-tag">Context 4 Healthcare · Orders & claims rules</div>
-            <p>Workflow analysis and rule configuration for ordered services (labs, imaging, procedures).</p>
-            <span class="project-link">View project →</span>
-          </a>
-
-          <a class="project-card" href="project-claims-api.html">
-            <div class="project-title">Claims Services & Secure APIs</div>
-            <div class="project-tag">Capgemini / AXA · .NET & SQL</div>
-            <p>Backend services and validation logic for claims and eligibility workflows.</p>
-            <span class="project-link">View project →</span>
-          </a>
-
-          <a class="project-card" href="project-vendor-apps.html">
-            <div class="project-title">Vendor Application Customization</div>
-            <div class="project-tag">Tech Cities · Vendor apps</div>
-            <p>Configuring vendor software to match customer workflows and data requirements.</p>
-            <span class="project-link">View project →</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="reveal">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>For opportunities related to healthcare application development, orders workflows, or EHR/claims systems.</p>
-        </div>
-
-        <div class="card">
-          <p><strong>Name:</strong> Venkata Jayadeep Patibandla</p>
-          <p><strong>Email:</strong> <a href="mailto:patibandlavj@gmail.com">patibandlavj@gmail.com</a></p>
-          <p><strong>Phone:</strong> +1 (502) 295-2839</p>
-          <p><strong>Focus:</strong> Application Developer – Healthcare · EHR · Orders · Claims</p>
-          <p><strong>Certification:</strong> Microsoft Certified – Azure Developer Associate (AZ-204)</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-inner">
-        © <span id="year"></span> Venkata Jayadeep Patibandla · Portfolio
-      </div>
-    </footer>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top blur-nav">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Jayadeep</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="motion-design.html">Motion UI</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About & Contact</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <script>
-    // Set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+<!-- HERO -->
+<header class="hero-section">
+  <div class="hero-gradient"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-6 hero-text section-reveal">
+        <p class="badge bg-soft-purple text-uppercase mb-3">Application Developer – Healthcare · Orders · Claims</p>
+        <h1 class="display-4 fw-bold mb-3">
+          I design and build <span class="text-gradient">order-driven & claims-aware</span> applications.
+        </h1>
+        <p class="lead mb-4">
+          10+ years in .NET, SQL, and cloud – focusing on rules engines, EHR workflows, and
+          claims validation used by billing teams, SMEs, and clinicians.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="projects.html" class="btn btn-primary btn-lg">View Healthcare Projects →</a>
+          <a href="motion-design.html" class="btn btn-outline-light btn-lg">See Motion Design & UI</a>
+        </div>
+        <div class="mt-4 small text-muted">
+          Currently: Senior Software Engineer – Context 4 Healthcare · Open to remote/hybrid roles in Iowa & USA.
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1 text-center section-reveal">
+        <div class="hero-photo-wrap">
+          <!-- REPLACE WITH YOUR PHOTO -->
+          <img src="assets/IMG.jpg" alt="Venkata Jayadeep Patibandla" class="hero-photo">
+          <div class="hero-chip hero-chip-top">Orders & Workflow</div>
+          <div class="hero-chip hero-chip-bottom">Claims Rules Engine</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    // Scroll reveal animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // once visible, stop observing to avoid re-animations
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+<!-- QUICK STATS -->
+<section class="py-5 section-reveal">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>10+ years</h3>
+          <p>Designing & building .NET / .NET Core applications across healthcare & insurance.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>3+ healthcare orgs</h3>
+          <p>Context4 Healthcare, Capgemini / AXA, Tech Cities – orders, claims, and pricing workflows.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-card">
+          <h3>AZ-204</h3>
+          <p>Microsoft Certified Azure Developer Associate – APIs, Functions, App Service, DevOps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    document.querySelectorAll('.reveal').forEach(elem => observer.observe(elem));
-  </script>
+<!-- MOTION DESIGN / TILE GRID (like example) -->
+<section class="py-5 bg-soft section-reveal">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+      <h2 class="mb-0">Interactive healthcare applications</h2>
+      <a href="projects.html" class="link-arrow">View all project case studies →</a>
+    </div>
+
+    <div class="row g-4">
+      <!-- TILE 1 -->
+      <div class="col-lg-6">
+        <a href="claims-orders-showcase.html" class="motion-card">
+          <!-- REPLACE GIF/IMAGE -->
+          <div class="motion-img-wrap">
+            <img src="assets/claims-dashboard.gif" alt="Claims dashboard animation" />
+          </div>
+          <div class="motion-content">
+            <h3>Claims Rules Validation Studio</h3>
+            <p>
+              An interactive UI for authoring, testing, and promoting claims rules
+              (like ESRD pricing & procedure edits) with visual feedback and SQL-driven validation.
+            </p>
+            <span class="tag">.NET · SQL Server · Azure</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- TILE 2 -->
+      <div class="col-lg-6">
+        <a href="orders-workflow.html" class="motion-card">
+          <div class="motion-img-wrap">
+            <img src="assets/orders-workflow.gif" alt="Orders workflow animation" />
+          </div>
+          <div class="motion-content">
+            <h3>Orders Workflow Designer</h3>
+            <p>
+              Motion-driven workflow canvas for lab / imaging / procedure orders, showing statuses,
+              SLA breaches, and downstream billing impact in real time.
+            </p>
+            <span class="tag">Blazor / React · Microservices</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- TILE 3 -->
+      <div class="col-lg-4">
+        <a href="vendor-portals.html" class="motion-card small">
+          <div class="motion-img-wrap">
+            <img src="assets/vendor-portal.gif" alt="Vendor portal animation" />
+          </div>
+          <div class="motion-content">
+            <h4>Vendor Configuration Portal</h4>
+            <p class="small">
+              Configure payer rules, contracts, and vendors with guardrails & audit logs.
+            </p>
+            <span class="tag">Angular · REST APIs</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- TILE 4 -->
+      <div class="col-lg-4">
+        <a href="motion-design.html" class="motion-card small">
+          <div class="motion-img-wrap">
+            <img src="assets/motion-microinteractions.gif" alt="Micro-interactions" />
+          </div>
+          <div class="motion-content">
+            <h4>Micro-interactions for EHR</h4>
+            <p class="small">
+              Apple-style transitions for orders, filters, and validation errors.
+            </p>
+            <span class="tag">Motion Design</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- TILE 5 -->
+      <div class="col-lg-4">
+        <a href="projects.html#data" class="motion-card small">
+          <div class="motion-img-wrap">
+            <img src="assets/sql-analytics.gif" alt="SQL analytics" />
+          </div>
+          <div class="motion-content">
+            <h4>SQL & Data Quality</h4>
+            <p class="small">
+              Complex joins for claim lineage, tracking edits from import to adjudication.
+            </p>
+            <span class="tag">T-SQL · BigQuery</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY STRIP -->
+<section class="py-5 section-reveal">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6">
+        <h2>From claim file to paid invoice – end-to-end.</h2>
+      </div>
+      <div class="col-md-6">
+        <ol class="timeline">
+          <li><strong>Ingest:</strong> raw 837/835, CSV, or vendor feeds land in staging tables.</li>
+          <li><strong>Validate:</strong> rule engine checks coverage, coding, fee schedules.</li>
+          <li><strong>Visualize:</strong> dashboards highlight denied, under-paid, or risky claims.</li>
+          <li><strong>Automate:</strong> APIs send clean data to EHR, billing, and analytics systems.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-dark text-light section-reveal">
+  <div class="container text-center">
+    <h2 class="mb-3">Want to see how I can improve your orders & claims workflows?</h2>
+    <p class="mb-4">
+      Explore the detailed case studies or get in touch for a walkthrough tailored to your product.
+    </p>
+    <a href="projects.html" class="btn btn-light btn-lg me-2">Explore Case Studies</a>
+    <a href="about.html#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+  </div>
+</section>
+
+<footer class="py-4 text-center small text-muted">
+  © <span id="year"></span> Venkata Jayadeep Patibandla · Built with .NET, SQL, and a bit of motion design.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
