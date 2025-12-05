@@ -209,4 +209,428 @@
     }
 
     .hero-title {
-      font-size: 1
+      font-size: 1.6rem;
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+
+    .hero-tags {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-tags span {
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .hero-card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .hero-card p {
+      margin: 4px 0;
+    }
+
+    /* Simple chips */
+    .chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      font-size: 0.78rem;
+      margin: 2px 4px 0 0;
+      color: #374151;
+    }
+
+    /* Cards / grids */
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.03);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      border-color: #d1d5db;
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin: 0 0 6px;
+    }
+
+    .card p {
+      margin: 4px 0;
+    }
+
+    /* Lists */
+    .list {
+      padding-left: 18px;
+      margin: 6px 0 0;
+      font-size: 0.9rem;
+    }
+
+    .list li {
+      margin-bottom: 3px;
+    }
+
+    .meta-line {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .job-title {
+      font-weight: 500;
+    }
+
+    /* Project cards with motion */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      padding: 10px 12px;
+      font-size: 0.86rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      color: #111827;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.09), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border-color: #d1d5db;
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-title {
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .project-tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .project-link {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-soft);
+      background: #ffffff;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 10px 16px 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div class="top-inner">
+        <div class="brand">
+          <div class="avatar">
+            <!-- Make sure jay-photo.jpg is uploaded in the repo -->
+            <img src="img.jpg" alt="Venkata Jayadeep Patibandla">
+          </div>
+          <div class="brand-text">
+            <span>Venkata Jayadeep Patibandla</span>
+            <span>Application Developer – Healthcare · EHR · Orders</span>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="motion-banner"></div>
+    </header>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Hero / About -->
+      <section id="about" class="reveal">
+        <div class="hero">
+          <div>
+            <p class="hero-tags">
+              <span>Healthcare IT</span>·
+              <span>Application Development</span>·
+              <span>Orders & Claims Workflows</span>
+            </p>
+            <h1 class="hero-title">
+              Application Developer focused on healthcare workflows and order-driven systems.
+            </h1>
+            <p class="hero-subtitle">
+              I have <strong>5+ years of experience</strong> working with healthcare and insurance systems at
+              Tech Cities, Capgemini (AXA), and Context 4 Healthcare. I support and build applications used
+              by non-technical users such as billing teams, SMEs, and clinicians.
+            </p>
+            <p class="hero-subtitle">
+              My work includes workflow analysis, application configuration, SQL-driven validation, and
+              writing clear test cases for upgrades and new functionality.
+            </p>
+          </div>
+
+          <aside class="hero-card">
+            <p><strong>Target Role:</strong> Application Developer – Orders (25006175)</p>
+            <p class="meta-line">
+              Aligned with UI Health Care’s focus on workflow analysis, application build, testing, and support for orders management.
+            </p>
+            <p>
+              <strong>Current:</strong> Senior Software Engineer – Context 4 Healthcare<br>
+              <strong>Location:</strong> USA · Open to remote/hybrid in Iowa (per role requirements)
+            </p>
+            <p>
+              <strong>Contact:</strong><br>
+              Email: <a href="mailto:patibandlavj@gmail.com">patibandlavj@gmail.com</a><br>
+              Phone: +1 (502) 295-2839
+            </p>
+            <p>
+              <span class="chip">Healthcare workflows</span>
+              <span class="chip">Orders & claims</span>
+              <span class="chip">Testing & QA</span>
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="reveal">
+        <div class="section-header">
+          <h2>Skills Overview</h2>
+          <p>Technical and domain skills relevant to healthcare application development and support.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Healthcare & Workflow</h3>
+            <p class="meta-line">Experience with real-world clinical and claims processes.</p>
+            <ul class="list">
+              <li>Orders and procedure workflows (labs, imaging, related services).</li>
+              <li>Claims validation, clinical edits, rules-based engines.</li>
+              <li>Understanding of EHR-linked workflows for inpatient/ambulatory settings.</li>
+              <li>Working with SMEs, nurses, billing staff, and operations users.</li>
+              <li>Translating workflows into functional and technical specifications.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Technical & Testing</h3>
+            <p class="meta-line">Tools used to implement and support applications.</p>
+            <ul class="list">
+              <li>C#, .NET, Web API, RESTful services.</li>
+              <li>SQL Server, T-SQL, complex joins and stored procedures.</li>
+              <li>Python, basic Scala, Git, CI/CD concepts.</li>
+              <li>Azure (Microsoft Certified: AZ-204), basic AWS exposure.</li>
+              <li>Writing and executing unit, integration, regression, and UAT test cases.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="reveal">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p>Roles that align with analysis, configuration, testing, and support of healthcare applications.</p>
+        </div>
+
+        <div class="card">
+          <h3>Context 4 Healthcare</h3>
+          <p class="job-title">Senior Software Engineer</p>
+          <p class="meta-line">Naperville, IL · 2022 – Present</p>
+          <ul class="list">
+            <li>Support and enhance rule-based applications that validate claims, procedures, and ordered services.</li>
+            <li>Analyze clinical and billing workflows and convert them into rule configurations and technical requirements.</li>
+            <li>Design and execute detailed test scripts for new rules, clinical edits, upgrades, and defect fixes.</li>
+            <li>Work closely with non-technical users (billing staff, SMEs) to clarify requirements and system behavior.</li>
+            <li>Troubleshoot production issues across SQL, application logic, and configuration, ensuring accurate outcomes.</li>
+            <li>Document system design, changes, and testing results in a clear and reusable format.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Capgemini – AXA Health Insurance</h3>
+          <p class="job-title">Application Developer</p>
+          <p class="meta-line">India · 2020 – 2022</p>
+          <ul class="list">
+            <li>Supported EHR-linked claims and procedure workflows for a large health insurance client.</li>
+            <li>Collaborated with nurses, billing teams, and operations staff to resolve workflow and data issues.</li>
+            <li>Wrote SQL queries and test cases to validate diagnosis/procedure relationships and claims logic.</li>
+            <li>Participated in application upgrades, performing regression and integration testing.</li>
+            <li>Worked with application owners and vendors to clarify integration requirements and system capabilities.</li>
+            <li>Converted business workflows into functional specifications for development and QA teams.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Tech Cities</h3>
+          <p class="job-title">Software Developer</p>
+          <p class="meta-line">India · 2019 – 2020</p>
+          <ul class="list">
+            <li>Developed and supported .NET and SQL applications used by business and healthcare users.</li>
+            <li>Implemented backend logic and APIs to streamline manual processes and reduce errors.</li>
+            <li>Optimized SQL queries and application flows to improve performance.</li>
+            <li>Created test cases and performed end-to-end validation before releases.</li>
+            <li>Documented features, known issues, and deployment steps for team use.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects with motion & links -->
+      <section id="projects" class="reveal">
+        <div class="section-header">
+          <h2>Projects – Click to view details</h2>
+          <p>Each card links to a separate page with more detail about that project.</p>
+        </div>
+
+        <div class="projects-grid">
+          <a class="project-card" href="project-orders.html">
+            <div class="project-title">Clinical Orders & Claims Optimization</div>
+            <div class="project-tag">Context 4 Healthcare · Orders & claims rules</div>
+            <p>Workflow analysis and rule configuration for ordered services (labs, imaging, procedures).</p>
+            <span class="project-link">View project →</span>
+          </a>
+
+          <a class="project-card" href="project-claims-api.html">
+            <div class="project-title">Claims Services & Secure APIs</div>
+            <div class="project-tag">Capgemini / AXA · .NET & SQL</div>
+            <p>Backend services and validation logic for claims and eligibility workflows.</p>
+            <span class="project-link">View project →</span>
+          </a>
+
+          <a class="project-card" href="project-vendor-apps.html">
+            <div class="project-title">Vendor Application Customization</div>
+            <div class="project-tag">Tech Cities · Vendor apps</div>
+            <p>Configuring vendor software to match customer workflows and data requirements.</p>
+            <span class="project-link">View project →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="reveal">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>For opportunities related to healthcare application development, orders workflows, or EHR/claims systems.</p>
+        </div>
+
+        <div class="card">
+          <p><strong>Name:</strong> Venkata Jayadeep Patibandla</p>
+          <p><strong>Email:</strong> <a href="mailto:patibandlavj@gmail.com">patibandlavj@gmail.com</a></p>
+          <p><strong>Phone:</strong> +1 (502) 295-2839</p>
+          <p><strong>Focus:</strong> Application Developer – Healthcare · EHR · Orders · Claims</p>
+          <p><strong>Certification:</strong> Microsoft Certified – Azure Developer Associate (AZ-204)</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        © <span id="year"></span> Venkata Jayadeep Patibandla · Portfolio
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // once visible, stop observing to avoid re-animations
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(elem => observer.observe(elem));
+  </script>
+</body>
+</html>
