@@ -25,16 +25,21 @@
       scroll-behavior: smooth;
     }
 
+    /* Force light background + dark text everywhere */
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
+      background: var(--bg) !important;
+      color: var(--text-main) !important;
       line-height: 1.6;
     }
 
+    body, h1, h2, h3, p, li, span, div, header, footer, section {
+      color: #111827 !important;
+    }
+
     a {
-      color: var(--accent);
+      color: var(--accent) !important;
       text-decoration: none;
     }
 
@@ -50,7 +55,7 @@
 
     /* Top bar */
     .top-bar {
-      background: #ffffff;
+      background: #ffffff !important;
       border-bottom: 1px solid var(--border-soft);
       position: sticky;
       top: 0;
@@ -77,14 +82,18 @@
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      background: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #374151;
+      overflow: hidden;
       border: 1px solid #d1d5db;
+      background: #e5e7eb;
+      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 999px;
     }
 
     .brand-text {
@@ -99,7 +108,7 @@
 
     .brand-text span:last-child {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
     }
 
     .nav-links {
@@ -113,14 +122,14 @@
       padding: 4px 10px;
       border-radius: 999px;
       border: 1px solid transparent;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
     }
 
     .nav-links a:hover {
       border-color: var(--border-soft);
       background: #f3f4f6;
       text-decoration: none;
-      color: #111827;
+      color: #111827 !important;
     }
 
     /* Layout */
@@ -149,10 +158,10 @@
     .section-header p {
       margin: 3px 0 0;
       font-size: 0.9rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
     }
 
-    /* Motion banner (simple animated shape) */
+    /* Motion banner (simple animated stripe) */
     .motion-banner {
       position: relative;
       margin: 10px 0 20px;
@@ -200,13 +209,13 @@
 
     .hero-subtitle {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
       margin: 0 0 10px;
     }
 
     .hero-tags {
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
       margin-bottom: 8px;
     }
 
@@ -235,7 +244,7 @@
       background: #f3f4f6;
       font-size: 0.78rem;
       margin: 2px 4px 0 0;
-      color: #374151;
+      color: #374151 !important;
     }
 
     /* Cards / grids */
@@ -281,7 +290,7 @@
 
     .meta-line {
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
     }
 
     .job-title {
@@ -317,6 +326,7 @@
       overflow: hidden;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
       cursor: pointer;
+      color: #111827 !important;
     }
 
     .project-card::before {
@@ -346,13 +356,13 @@
 
     .project-tag {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
       margin-bottom: 4px;
     }
 
     .project-link {
       font-size: 0.8rem;
-      color: var(--accent);
+      color: var(--accent) !important;
       text-decoration: none;
     }
 
@@ -363,9 +373,9 @@
     /* Footer */
     footer {
       border-top: 1px solid var(--border-soft);
-      background: #ffffff;
+      background: #ffffff !important;
       font-size: 0.8rem;
-      color: var(--text-muted);
+      color: var(--text-muted) !important;
     }
 
     .footer-inner {
@@ -382,7 +392,10 @@
     <header class="top-bar">
       <div class="top-inner">
         <div class="brand">
-          <div class="avatar">JP</div>
+          <div class="avatar">
+            <!-- Make sure jay-photo.jpg exists in the repo -->
+            <img src="jay-photo.jpg" alt="Venkata Jayadeep Patibandla">
+          </div>
           <div class="brand-text">
             <span>Venkata Jayadeep Patibandla</span>
             <span>Application Developer – Healthcare · EHR · Orders</span>
@@ -542,53 +555,4 @@
             <div class="project-title">Clinical Orders & Claims Optimization</div>
             <div class="project-tag">Context 4 Healthcare · Orders & claims rules</div>
             <p>Workflow analysis and rule configuration for ordered services (labs, imaging, procedures).</p>
-            <span class="project-link">View project →</span>
-          </a>
-
-          <a class="project-card" href="project-claims-api.html">
-            <div class="project-title">Claims Services & Secure APIs</div>
-            <div class="project-tag">Capgemini / AXA · .NET & SQL</div>
-            <p>Backend services and validation logic for claims and eligibility workflows.</p>
-            <span class="project-link">View project →</span>
-          </a>
-
-          <a class="project-card" href="project-vendor-apps.html">
-            <div class="project-title">Vendor Application Customization</div>
-            <div class="project-tag">Tech Cities · Vendor apps</div>
-            <p>Configuring vendor software to match customer workflows and data requirements.</p>
-            <span class="project-link">View project →</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>For opportunities related to healthcare application development, orders workflows, or EHR/claims systems.</p>
-        </div>
-
-        <div class="card">
-          <p><strong>Name:</strong> Venkata Jayadeep Patibandla</p>
-          <p><strong>Email:</strong> <a href="mailto:patibandlavj@gmail.com">patibandlavj@gmail.com</a></p>
-          <p><strong>Phone:</strong> +1 (502) 295-2839</p>
-          <p><strong>Focus:</strong> Application Developer – Healthcare · EHR · Orders · Claims</p>
-          <p><strong>Certification:</strong> Microsoft Certified – Azure Developer Associate (AZ-204)</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-inner">
-        © <span id="year"></span> Venkata Jayadeep Patibandla · Portfolio
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+            <s
