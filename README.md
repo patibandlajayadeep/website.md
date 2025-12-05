@@ -1,9 +1,9 @@
 # 📌 **Portfolio – Venkata Jayadeep Patibandla**  
 **Application Developer – Healthcare | EHR | Orders Workflows**
 
-📧 **Email:** jayadeeppati668@gmail.com  
-📞 **Phone:** +1 815-414-2228  
-🔗 **LinkedIn:** https://www.linkedin.com/in/venkata-jayadeep-patibandla-87951215b/  
+📧 **Email:** patibandlavj@gmail.com  
+📞 **Phone:** +1 502-295-2839
+🔗 **LinkedIn:** https://www.linkedin.com/in/venkata-jayadeep-patibandla-87951215b/  ](https://www.linkedin.com/in/jayadeep-patibandla-0940a1302/
 
 ---
 
@@ -22,11 +22,7 @@ My goal is to improve patient-care workflows by ensuring systems are accurate, e
 
 ---
 
-## 🎯 Target Role – Application Developer (Orders)
-
-This portfolio aligns with the UI Health Care **Application Developer – Orders** role.
-
-Matching qualifications:
+Qualifications:
 
 - ✔ Healthcare application support experience  
 - ✔ Workflow analysis for orders, procedures, and claims  
@@ -73,7 +69,7 @@ Matching qualifications:
 ---
 
 ## **Context 4 Healthcare**  
-### *Software Engineer / QA Analyst / Data Analyst*  
+### * Senior Software Engineer*  
 **Naperville, IL — 2022–Present**
 
 - Support and enhance **healthcare rule-based applications** validating claims, procedures, and ordered services.  
@@ -86,8 +82,8 @@ Matching qualifications:
 ---
 
 ## **Capgemini (Client: AXA – Health Insurance)**  
-### *Data Analyst / Application Support Analyst*  
-**USA / India / Japan — 2020–2022**
+### *Application Developer*  
+**India— 2020–2022**
 
 - Support **EHR-linked claims & procedure workflows**.  
 - Collaborate with nurses, billing teams, and operations staff to improve workflows.  
@@ -100,7 +96,7 @@ Matching qualifications:
 
 ## **Tech Cities**  
 ### *Software Developer*  
-**Louisville, KY — 2019–2020**
+**India — 2019–2020**
 
 - Build and support **.NET & SQL applications** for healthcare and business users.  
 - Improve workflows by reducing unnecessary manual steps.  
@@ -120,20 +116,31 @@ Matching qualifications:
 - Document dependencies and workflow impact.  
 
 ---
+## **2.Integrated backend microservices with CRM/LOB apps (Dynamics 365 Sales patterns).**
+- Built and deployed .NET Core applications supporting high-volume eligibility and claims systems, increasing throughput by 45%..  
+- Implemented OAuth 2.0, JWT, and secure API architecture to meet enterprise privacy and compliance standards.  
+- Produced comprehensive technical documentation and detailed design artifacts supporting modular application components for .NET Core and
+Azure-based solutions, expediting onboarding of new developers by 30% across a distributed team of 16.  
+- Document dependencies and workflow impact.  
 
-## **2. EHR Workflow Support & Validation – Capgemini / AXA**
+## **3. EHR Workflow Support & Validation – Capgemini / AXA**
 - Support EHR-integrated workflows related to claims and procedures.  
 - Use SQL to validate patient claims, diagnosis logic, and dependencies.  
 - Participate in UAT, regression, and upgrade testing cycles.  
 
 ---
 
-## **3. Vendor Application Customization – Tech Cities**
+## **4. Vendor Application Customization – Tech Cities**
 - Customize healthcare vendor software to match business workflows.  
 - Integrate APIs, map data fields, and validate system behavior.  
 - Assist in testing and release deployment.  
 
 ---
+
+## **5. Implemented secure API and RBAC-based access for financial/insurance systems. – Tech Cities**
+- Integrated .NET APIs with Oracle DB for secure data retrieval, transformation, and storage operation.  
+- Conducted requirement analysis and created functional/technical specifications for new application features.  
+- Built interactive dashboards, custom CMS templates, and reusable UI components supporting public-facing digital platforms.  
 
 # 🎓 Certifications
 
