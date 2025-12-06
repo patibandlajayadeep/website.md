@@ -51,4 +51,229 @@
       border-radius: 18px;
       padding: 1.25rem;
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.45);
-      display: fle
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      width: 100%;
+    }
+
+    .motion-gallery-card h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .motion-gallery-card p.small {
+      color: #cbd5f5;
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    /* Image / video container with fixed aspect ratio */
+    .motion-img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #020617;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 0.35rem;
+    }
+
+    .motion-img-wrap img,
+    .motion-img-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bg-soft {
+      background: #ffffff;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Jayadeep</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link active" href="motion-design.html">Motion UI</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About & Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="mb-3">Motion Design for Healthcare Apps</h1>
+    <p class="lead mb-0">
+      Micro-interactions, hover states, and transitions that make complex claims and order data feel simple.
+    </p>
+  </div>
+</header>
+
+<section class="motion-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Filter Drawer Motion (GIF) -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <img src="https://i.gifer.com/DXKg.gif" alt="Motion design" />
+          </div>
+          <h4>Filter drawer for claim queues</h4>
+          <p class="small">
+            Sliding panel with subtle blur & easing to edit complex filters without overwhelming users.
+          </p>
+        </div>
+      </div>
+
+      <!-- Order Stepper -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="Insurance.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h4>Order status stepper</h4>
+          <p class="small">
+            Animated stepper showing where an order is stuck (lab, radiology, billing, etc.).
+          </p>
+        </div>
+      </div>
+
+      <!-- Rule Hit -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="assets/motion-rule-hit.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h4>Rule-hit highlights</h4>
+          <p class="small">
+            Glow & bounce animation when a claim fails a rule—attention-grabbing but subtle.
+          </p>
+        </div>
+      </div>
+
+      <!-- Toast Notifications -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="assets/motion-toast.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h4>Accessible toast notifications</h4>
+          <p class="small">
+            Slide-in notifications for rule promotions, exports, and long-running jobs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Expandable Claim Row -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="assets/motion-table-row.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h4>Expandable claim rows</h4>
+          <p class="small">
+            Tap to animate open claim details, rule fires, and pricing breakdown.
+          </p>
+        </div>
+      </div>
+
+      <!-- Loader State -->
+      <div class="col-sm-10 col-md-6 col-lg-4 motion-col">
+        <div class="motion-gallery-card">
+          <div class="motion-img-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="assets/motion-loader.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <h4>Calm loading states</h4>
+          <p class="small">
+            Skeleton screens let users understand layout before final data loads.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-soft">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2>Why this matters for recruiters &amp; hiring managers</h2>
+        <p>
+          Most .NET / healthcare portfolios show only bullet lists. Here you can actually see
+          how I think about UX, latency, and clarity for non-technical users.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <ul class="timeline">
+          <li>Motion is subtle – guiding the eye without distraction.</li>
+          <li>Everything is accessible and keyboard-friendly.</li>
+          <li>All motions map directly into .NET / React / Blazor implementations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-4 text-center small text-muted">
+  <a href="index.html" class="me-3">← Back to home</a>
+  <a href="projects.html" class="me-3">Projects</a>
+  <a href="about.html#contact">Contact</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
