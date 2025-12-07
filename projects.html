@@ -48,14 +48,26 @@
         <span class="project-tag">Claims & Pricing</span>
         <h2>Claims Rules Validation Studio</h2>
         <p>
-          A web application used by analysts to configure and test rules like ESRD pricing,
-          bundling logic, and clinical edits before they are pushed into production.
+          A comprehensive studio for analysts, QA, and engineering teams to build, test, and validate 
+          claim pricing rules with real-time visibility into rule outcomes and pricing behavior — without 
+          needing SQL or production access.
         </p>
         <ul>
-          <li>Built API-driven rule test harness in <strong>.NET / Web API</strong> with SQL Server backend.</li>
-          <li>Created UI where analysts can run sample claims, inspect each rule fire, and export
-              audit logs for compliance.</li>
-          <li>Reduced production rule defects by <strong>30%+</strong> by catching issues earlier.</li>
+          <li>
+            Built a UI that highlights <strong>rule fires, misses, and pricing changes</strong> with 
+            expected vs. actual comparisons.
+          </li>
+          <li>
+            Added <strong>batch validation mode</strong> to test hundreds of claims and produce pass/fail 
+            accuracy reports for QA review.
+          </li>
+          <li>
+            Integrated detailed audit trails including inputs, outputs, reason codes, and timestamps for 
+            compliance and debugging.
+          </li>
+          <li>
+            Enabled exporting of test cases and validation reports for analysts, developers, and QA teams.
+          </li>
         </ul>
       </div>
     </div>
@@ -75,14 +87,31 @@
         <span class="project-tag">Orders & EHR Workflow</span>
         <h2>Order Journey Explorer</h2>
         <p>
-          A timeline view for lab, imaging, and procedure orders that shows each step –
-          from placement to billing – with warnings when something is stuck.
+           An interactive tool that lets operations, billing, and support teams trace a patient order
+          end-to-end across labs, radiology, eligibility, pricing, and claims systems — without
+          needing to query databases or sift through logs.
         </p>
         <ul>
-          <li>Designed microservice APIs to track order events and statuses.</li>
-          <li>Front-end built with <strong>Blazor / React</strong> and animated transitions so staff
-              can see delays instantly.</li>
-          <li>Helped operations team reduce average order turnaround time by several hours.</li>
+                    <li>
+            Designed an end-to-end <strong>order timeline</strong> that stitches events from orders,
+            scheduling, billing, and claims into a single view.
+          </li>
+          <li>
+            Built backend aggregation APIs in <strong>.NET Core</strong> to join SQL data, message logs,
+            and third-party services into time-ordered journeys.
+          </li>
+          <li>
+            Implemented filters and search by order ID, MRN, payer, facility, provider, status,
+            and date range to quickly locate problem orders.
+          </li>
+          <li>
+            Added drill-down views for rule hits, denials, and resubmissions with exact reason
+            codes and timestamps.
+          </li>
+          <li>
+            Instrumented telemetry and logging (latency, error spikes, retries) to help engineering
+            debug production issues faster.
+          </li>
         </ul>
       </div>
     </div>
