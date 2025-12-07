@@ -104,13 +104,25 @@
         <span class="project-tag">Vendor Apps</span>
         <h2>Vendor Configuration Portal</h2>
         <p>
-          A secure application that lets internal users configure payers, fee schedules,
-          and vendors without needing direct database access.
+          A secure internal web application that allows business teams to configure payers, fee schedules, vendors, reimbursement settings, and workflow 
+          rules—all without requiring direct database access.
         </p>
         <ul>
           <li>Implemented role-based access and fine-grained auditing with <strong>.NET Core</strong> and Azure AD.</li>
-          <li>Added workflow to submit changes for approval, with email notifications and history.</li>
-          <li>Cut down “DB change” tickets by more than half while improving traceability.</li>
+              <li>
+            Implemented an approval workflow for configuration changes with reviewers,
+            email notifications, and full audit history.
+          </li>
+          <li>
+            Added detailed auditing and activity logs, improving compliance and traceability
+            for financial and claim-processing changes.
+          </li>
+          <li>
+            Reduced manual DBA “DB change” tickets by more than half, speeding up releases.
+          </li>
+          <li>
+            Improved data integrity by validating configuration changes before they reach production.
+          </li>
         </ul>
         <a href="vendor-portals.html" class="link-arrow">Open full case study →</a>
       </div>
